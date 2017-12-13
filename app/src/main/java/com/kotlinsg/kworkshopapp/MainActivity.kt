@@ -2,17 +2,23 @@ package com.kotlinsg.kworkshopapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import android.view.View
+import dagger.android.support.DaggerAppCompatActivity
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DaggerAppCompatActivity() {
+
+    @Inject lateinit var interf: MainUseCase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        findViewById(R.id.icon).setOnClickListener { openGithubScreen() }
+        interf.main()
+        findViewById<View>(R.id.icon).setOnClickListener { openGithubScreen() }
     }
 
     private fun openGithubScreen() {
         startActivity(Intent(this, GithubActivity::class.java))
+
     }
 }
