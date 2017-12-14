@@ -2,7 +2,9 @@ package com.kotlinsg.kworkshopapp.di
 
 import android.app.Application
 import android.content.Context
+import com.github.nekdenis.mylibrary.di.Logger
 import com.kotlinsg.kworkshopapp.App
+import com.kotlinsg.kworkshopapp.LoggerImpl
 import com.kotlinsg.kworkshopapp.MainActivity
 import dagger.Module
 import dagger.Provides
@@ -27,6 +29,13 @@ abstract class AppModule {
         @Singleton
         fun application(app: App): Application {
             return app
+        }
+
+        @JvmStatic
+        @Provides
+        @Singleton
+        fun provideLogger(): Logger {
+            return LoggerImpl()
         }
     }
 

@@ -4,6 +4,7 @@ import android.app.Application
 
 interface ApplicationContextProvider {
     fun provideContext(): Application
+    fun provideLogger(): Logger
 }
 
 interface NetworkClientProvider {

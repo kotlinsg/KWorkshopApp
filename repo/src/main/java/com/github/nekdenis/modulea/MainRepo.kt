@@ -1,6 +1,6 @@
 package com.github.nekdenis.modulea
 
-import android.util.Log
+import com.github.nekdenis.mylibrary.di.Logger
 import com.github.nekdenis.mylibrary.di.NetworkClient
 import javax.inject.Inject
 
@@ -9,9 +9,10 @@ interface MainRepo {
 }
 
 class MainRepoImpl @Inject constructor(
-        val client: NetworkClient
+        val client: NetworkClient,
+        val logger: Logger
 ) : MainRepo {
     override fun getData() {
-        Log.d("TAG", client.request("sampleurl"))
+        logger.d(client.request("sampleurl"))
     }
 }
