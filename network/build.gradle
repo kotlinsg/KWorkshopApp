@@ -38,6 +38,9 @@ dependencies {
     implementation "com.google.dagger:dagger:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'com.github.kittinunf.fuel:fuel-android:1.8.0'
+    implementation 'com.google.code.gson:gson:2.8.2'
 }
 repositories {
     mavenCentral()

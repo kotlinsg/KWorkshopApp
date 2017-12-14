@@ -1,7 +1,7 @@
 package com.kotlinsg.kworkshopapp.di
 
-import com.github.nekdenis.mylibrary.di.ApplicationContextProvider
 import com.kotlinsg.kworkshopapp.App
+import com.kotlinsg.kworkshopapp.model.di.ApplicationContextProvider
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
