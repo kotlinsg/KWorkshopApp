@@ -1,6 +1,6 @@
 package com.kotlinsg.kworkshopapp.di
 
-import com.github.nekdenis.mylibrary.di.AppComponentInterface
+import com.github.nekdenis.mylibrary.di.ApplicationContextProvider
 import com.kotlinsg.kworkshopapp.App
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -13,7 +13,7 @@ import javax.inject.Singleton
         modules = [AppModule::class, AndroidSupportInjectionModule::class]
 )
 @Singleton
-interface AppComponent : AndroidInjector<App>, AppComponentInterface {
+interface AppComponent : AndroidInjector<App>, ApplicationContextProvider {
 
     @Component.Builder
     abstract class Builder : AndroidInjector.Builder<App>()

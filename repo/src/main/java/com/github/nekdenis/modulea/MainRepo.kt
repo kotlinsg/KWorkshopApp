@@ -1,7 +1,7 @@
 package com.github.nekdenis.modulea
 
 import android.util.Log
-import com.github.nekdenis.mylibrary.NetworkClient
+import com.github.nekdenis.mylibrary.di.NetworkClient
 import javax.inject.Inject
 
 interface MainRepo {

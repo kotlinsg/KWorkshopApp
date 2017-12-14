@@ -1,6 +1,5 @@
-package com.github.nekdenis.modulea.di
+package com.github.nekdenis.mylibrary.di
 
-import com.github.nekdenis.mylibrary.NetworkClient
 import com.github.nekdenis.mylibrary.NetworkClientImpl
 import dagger.Binds
 import dagger.Module
