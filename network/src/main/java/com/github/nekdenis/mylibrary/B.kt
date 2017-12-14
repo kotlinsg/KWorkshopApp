@@ -1,10 +1,13 @@
 package com.github.nekdenis.mylibrary
 
-import android.util.Log
+import javax.inject.Inject
 
+interface NetworkClient {
+    fun request(url: String): String
+}
 
-class B {
-    fun b() {
-        Log.d("TAG", "b")
-    }
+class NetworkClientImpl @Inject constructor(
+
+) : NetworkClient {
+    override fun request(url: String): String = "$url can't be processed"
 }

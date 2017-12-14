@@ -1,5 +1,6 @@
 package com.kotlinsg.kworkshopapp.di
 
+import android.app.Application
 import android.content.Context
 import com.kotlinsg.kworkshopapp.App
 import com.kotlinsg.kworkshopapp.MainActivity
@@ -19,6 +20,13 @@ abstract class AppModule {
         @Singleton
         fun context(app: App): Context {
             return app.getApplicationContext()
+        }
+
+        @JvmStatic
+        @Provides
+        @Singleton
+        fun application(app: App): Application {
+            return app
         }
     }
 
