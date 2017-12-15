@@ -8,5 +8,11 @@ import dagger.Component
         dependencies = [ApplicationContextProvider::class],
         modules = [RepoModule::class])
 interface RepoComponent : RepoProvider {
-
+    class Initializer private constructor() {
+        companion object {
+            fun init(appComponent: ApplicationContextProvider): RepoComponent = DaggerRepoComponent.builder()
+                    .applicationContextProvider(appComponent)
+                    .build()
+        }
+    }
 }

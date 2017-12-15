@@ -7,6 +7,7 @@ import com.kotlinsg.kworkshopapp.di.AppComponent
 import com.kotlinsg.kworkshopapp.di.GithubActivityComponent
 import com.kotlinsg.kworkshopapp.di.MainActivityComponent
 import com.kotlinsg.kworkshopapp.github.GithubActivity
+import com.kotlinsg.kworkshopapp.repo.di.RepoComponent
 
 
 class RealApp : Application(), App {
@@ -15,6 +16,7 @@ class RealApp : Application(), App {
     }
 
     lateinit var appComponent: AppComponent
+    lateinit var repoComponent: RepoComponent
     //    lateinit var featureComponent: FeatureComponent
 
     override fun inject(activity: Activity) {
@@ -24,14 +26,7 @@ class RealApp : Application(), App {
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = initDagger(this)
+        appComponent = AppComponent.Initializer.init(this)
+        repoComponent = RepoComponent.Initializer.init(appComponent)
     }
-
-    private fun initDagger(app: RealApp): AppComponent =
-            AppComponent.Initializer.init(app)
-    //                    .appModule(AppModule(app))
-    //                    .build()
-    //                    .apply {
-    //                        featureComponent = plusFeatureComponent(DaggerFeatureComponent())
-    //                    }
 }

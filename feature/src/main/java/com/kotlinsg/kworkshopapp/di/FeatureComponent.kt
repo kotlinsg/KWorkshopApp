@@ -3,6 +3,7 @@ package com.kotlinsg.kworkshopapp.di
 import com.kotlinsg.kworkshopapp.MainActivity
 import com.kotlinsg.kworkshopapp.github.GithubActivity
 import com.kotlinsg.kworkshopapp.model.di.ApplicationContextProvider
+import com.kotlinsg.kworkshopapp.model.di.RepoProvider
 import dagger.Component
 
 //@Singleton
@@ -17,16 +18,16 @@ import dagger.Component
 
 @ActivityScope
 @Component(
-        dependencies = arrayOf(ApplicationContextProvider::class),
+        dependencies = arrayOf(RepoProvider::class),
         modules = arrayOf(GithubActivityModule::class))
 interface GithubActivityComponent {
     fun inject(activity: GithubActivity)
 
     class Initializer private constructor() {
         companion object {
-            fun init(appComponent: ApplicationContextProvider): GithubActivityComponent =
+            fun init(repoComponent: RepoProvider): GithubActivityComponent =
                     DaggerGithubActivityComponent.builder()
-                            .applicationContextProvider(appComponent).build()
+                            .repoProvider(repoComponent).build()
         }
     }
 }
