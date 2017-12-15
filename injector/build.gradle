@@ -1,21 +1,20 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
+
 apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 26
-
-
-
+    buildToolsVersion '26.0.2'
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -26,12 +25,19 @@ android {
 }
 
 dependencies {
+    implementation project(':repo')
+    implementation project(':network')
     implementation project(':common')
+    implementation project(':feature')
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
 
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
     implementation "com.google.dagger:dagger:$daggerVersion"
+
 }
 repositories {
     mavenCentral()
