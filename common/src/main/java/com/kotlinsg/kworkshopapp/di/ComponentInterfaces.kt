@@ -15,7 +15,7 @@ interface NetworkClientProvider {
     fun provideNetworkClient(): NetworkClient
 }
 
-interface RepoProvider {
+interface RepoProvider : NetworkClientProvider {
     fun provideGithubRepo(): GithubRepo
 }
 
