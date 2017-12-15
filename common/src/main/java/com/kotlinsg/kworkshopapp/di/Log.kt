@@ -1,4 +1,4 @@
-package com.kotlinsg.kworkshopapp.model.di
+package com.kotlinsg.kworkshopapp.di
 
 
 interface Logger {

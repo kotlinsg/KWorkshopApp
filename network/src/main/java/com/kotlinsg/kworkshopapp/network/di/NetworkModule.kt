@@ -1,6 +1,6 @@
 package com.kotlinsg.kworkshopapp.network.di
 
-import com.kotlinsg.kworkshopapp.model.di.NetworkClient
+import com.kotlinsg.kworkshopapp.di.NetworkClient
 import com.kotlinsg.kworkshopapp.network.NetworkClientImpl
 import dagger.Binds
 import dagger.Module

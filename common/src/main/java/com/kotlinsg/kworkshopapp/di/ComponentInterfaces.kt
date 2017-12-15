@@ -1,4 +1,4 @@
-package com.kotlinsg.kworkshopapp.model.di
+package com.kotlinsg.kworkshopapp.di
 
 import com.kotlinsg.kworkshopapp.App
 import com.kotlinsg.kworkshopapp.GithubProject
@@ -15,7 +15,7 @@ interface NetworkClientProvider {
     fun provideNetworkClient(): NetworkClient
 }
 
-interface RepoProvider : ApplicationContextProvider {
+interface RepoProvider {
     fun provideGithubRepo(): GithubRepo
 }
 

@@ -6,8 +6,8 @@ import com.github.kittinunf.fuel.core.Response
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 import com.kotlinsg.kworkshopapp.GithubProject
-import com.kotlinsg.kworkshopapp.model.di.Logger
-import com.kotlinsg.kworkshopapp.model.di.NetworkClient
+import com.kotlinsg.kworkshopapp.di.Logger
+import com.kotlinsg.kworkshopapp.di.NetworkClient
 import com.kotlinsg.kworkshopapp.network.model.GithubProjectModel
 import javax.inject.Inject
 
@@ -23,7 +23,7 @@ class NetworkClientImpl @Inject constructor(
 
         url.httpGet().responseObject(
                 deserializer = GithubProjectModel.Deserializer())
-        { request: Request, response: Response, (result, error): Result<GithubProjectModel, FuelError> ->
+        { _: Request, _: Response, (result, error): Result<GithubProjectModel, FuelError> ->
 
             result?.let(onResult)
             error?.let(onError)

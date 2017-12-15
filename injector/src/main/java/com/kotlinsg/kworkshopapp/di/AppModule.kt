@@ -3,7 +3,6 @@ package com.kotlinsg.kworkshopapp.di
 import android.content.Context
 import com.kotlinsg.kworkshopapp.App
 import com.kotlinsg.kworkshopapp.RealApp
-import com.kotlinsg.kworkshopapp.model.di.Logger
 import com.kotlinsg.kworkshopapp.tools.LoggerImpl
 import com.kotlinsg.kworkshopapp.tools.Toaster
 import com.kotlinsg.kworkshopapp.tools.ToasterImpl

@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.kotlinsg.kworkshopapp.app.R
 import com.kotlinsg.kworkshopapp.github.GithubActivity
-import com.kotlinsg.kworkshopapp.model.di.Logger
+import com.kotlinsg.kworkshopapp.di.Logger
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {

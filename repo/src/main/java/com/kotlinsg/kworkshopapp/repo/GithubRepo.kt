@@ -1,7 +1,7 @@
 package com.kotlinsg.kworkshopapp.repo
 
 import com.kotlinsg.kworkshopapp.GithubProject
-import com.kotlinsg.kworkshopapp.model.di.Logger
+import com.kotlinsg.kworkshopapp.di.Logger
 import javax.inject.Inject
 
 class GithubRepoImpl @Inject constructor(

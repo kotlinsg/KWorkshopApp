@@ -21,7 +21,7 @@ class RealApp : Application(), App {
 
     override fun inject(activity: Activity) {
         if (activity is MainActivity) MainActivityComponent.Initializer.init(appComponent).inject(activity)
-        if (activity is GithubActivity) GithubActivityComponent.Initializer.init(appComponent).inject(activity)
+        if (activity is GithubActivity) GithubActivityComponent.Initializer.init(appComponent, repoComponent).inject(activity)
     }
 
     override fun onCreate() {
